@@ -2,44 +2,32 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Corpus</title>
-    <link rel="stylesheet" href="..\scss\styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway&display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="../style/style.css">
+	<title>Orchestra</title>
 </head>
 
-<body class="main-content">
-    <header class="section sec1 header active">
-    </header>
-    <main>
-        <section class="section sec2 about"></section>
-        <section class="section sec3 about"></section>
-        <section class="section sec4 about"></section>
-        <section class="section sec5 about"></section>
-    </main>
-    <div class="controls">
-        <div class="control control-1 active-btn">
-            <i class="fa-solid fa-circle"></i>
-        </div>
-        <div class="control control-2">
-            <i class="fa-solid fa-circle-notch"></i>
-        </div>
-        <div class="control control-3">
-            <i class="fa-solid fa-circle-notch"></i>
-        </div>
-        <div class="control control-4">
-            <i class="fa-solid fa-circle-notch"></i>
-        </div>
-        <div class="control control-5">
-            <i class="fa-solid fa-circle-notch"></i>
-        </div>
-    </div>
+<body>
+	<!-- The two texts -->
+	<div id="container" onclick="location.href='home.html';" style="cursor: pointer;">
+		<span id="text1" class="noisy"></span>
+		<span id="text2" class="noisy"></span>
+	</div>
 
-    <script src="..\js\main.js"></script>
+	<!-- The SVG filter used to create the merging effect -->
+	<svg id="filters">
+		<defs>
+			<filter id="threshold">
+				<!-- Basically just a threshold effect - pixels with a high enough opacity are set to full opacity, and all other pixels are set to completely transparent. -->
+				<feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0
+								0 1 0 0 0
+								0 0 1 0 0
+								0 0 0 244 -140" />
+			</filter>
+		</defs>
+	</svg>
+	<script src="../js/animate.js"></script>
 </body>
+
 </html>
