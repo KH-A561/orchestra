@@ -1,6 +1,15 @@
-var item = document.getElementById("main");
+var item = document.querySelector('html');
 
 window.addEventListener("wheel", function (e) {
-    if (e.deltaY > 0) item.scrollWidth += 100;
-    else item.scrollWidth -= 100;
+    var leftScrollAmount = -(e.wheelDeltaY * 3);
+    // if (e.wheelDeltaY < 0) {
+    //     leftScrollAmount = Math.max(scrollAmount += 500, scrollMax);
+    // } else {
+    //     leftScrollAmount = Math.min(scrollAmount -= 500, scrollMin);
+    // }
+    item.scrollBy({
+        top: 0,
+        left: leftScrollAmount,
+        behavior: 'smooth'
+    });
 });
